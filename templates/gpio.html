@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>
+          Web Controller
+      </title>
+  <meta http-equiv="x-ua-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#456BD9">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="onesignal" content="wordpress-plugin">
+          <link rel="manifest" href="#">
+
+<link rel="stylesheet" id="toolkit-css" href="static/almond_download/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="toolkit-css" href="static/almond_download/checkbox.css" type="text/css" media="all">
+</head>
+
+  <body>
+
+    <main role="main" id="main">
+
+              <div class="Sky">
+          <div class="u-containSpread">
+              <div class="u-pad1 u-flex u-flexWrap u-flexAlignItemsBaseline">
+    <h1 class="u-textGrow5 u-sm-textGrow6 u-spaceRight1">
+              NutsBoard WoT Controller - GPIO
+          </h1>
+  </div>
+          </div>
+        </div>
+
+    <hr class="u-spaceEnds1 u-spaceBottom2">
+    <div class="Grid Grid--withGutter">
+      {% for name, direction, value in info %}
+      <article class="Grid-cell u-spaceEnds01 u-spaceBottom1 u-sm-size1of2 u-md-size1of3">
+        <center>
+        <label class="switch"><input type="checkbox" id="togBtn" {% if value == True %} checked  {% endif %}><div class="slider round"><!--ADDED HTML --><span class="on">ON</span><span class="off">OFF</span><!--END--></div></label>
+        <br>
+        <label class="switch"><input type="checkbox" id="togBtn" {% if direction == "out" %} checked  {% endif %}><div class="slider round"><!--ADDED HTML --><span class="on">OUT</span><span class="off">IN</span><!--END--></div></label>
+        <br>
+        <input type="submit" value="Submit">
+
+        <h4 class="u-linkTarget u-spaceTop01 u-sm-padRight">
+          {{name}}
+        </h4>
+        </center>
+      </article>
+     {% endfor %}
+    </div>
+
+    </main>
+
+<script type="text/javascript" src="static/almond_download/main.js"></script>
+
+</body></html>

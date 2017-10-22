@@ -1,0 +1,20 @@
+= WoT Framework on Pistachio series
+
+Environment Setup on Debian like OS host PC
+
+[source,console]
+% sudo apt-get install python python-pip
+
+[source,console]
+% sudo pip install flask python-periphery
+
+Run WoT framework
+[source,console]
+% python main.py
+
+
+GPIO WoT controlling:
+[source,console]
+API path: nuts_gpio.py
+
+
