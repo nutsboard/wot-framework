@@ -34,17 +34,15 @@
     <div class="Grid Grid--withGutter">
       {% for name, direction, value in info %}
       <article class="Grid-cell u-spaceEnds01 u-spaceBottom1 u-sm-size1of2 u-md-size1of3">
+	<form name="form" id="{{name}}" onSubmit="0" action="/gpio" method="POST">
         <center>
-        <label class="switch"><input type="checkbox" id="togBtn" {% if value == True %} checked  {% endif %}><div class="slider round"><!--ADDED HTML --><span class="on">ON</span><span class="off">OFF</span><!--END--></div></label>
+        <label class="switch"><input type="checkbox" id="togBtn" name="value" {% if value == True %} checked  {% endif %}><div class="slider round"><span class="on">ON</span><span class="off">OFF</span></div></label>
         <br>
-        <label class="switch"><input type="checkbox" id="togBtn" {% if direction == "out" %} checked  {% endif %}><div class="slider round"><!--ADDED HTML --><span class="on">OUT</span><span class="off">IN</span><!--END--></div></label>
+        <label class="switch"><input type="checkbox" id="togBtn" name="direction" {% if direction == "out" %} checked  {% endif %}><div class="slider round"><span class="on">OUT</span><span class="off">IN</span></div></label>
         <br>
-        <input type="submit" value="Submit">
-
-        <h4 class="u-linkTarget u-spaceTop01 u-sm-padRight">
-          {{name}}
-        </h4>
+        <input type="submit" name="action" value="{{name}}">
         </center>
+	</form>
       </article>
      {% endfor %}
     </div>
